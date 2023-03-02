@@ -24,7 +24,7 @@ def lucky_tickets_count(chunk):
 
 @perfomance
 def multiprocess(num_threads, chunks):
-    pprint("паралельно  з діленням на частини")
+    pprint("паралельно з діленням на частини")
     with multiprocessing.Pool(processes=num_threads) as pool:
         results = pool.map(lucky_tickets_count, chunks)
         pprint(sum(results))
