@@ -54,10 +54,8 @@ def multiprocess_without_chunks(num_threads, tickets_list):
 @perfomance
 def default(chunks):
     pprint("в один потік з діленням на частини")
-    count = 0
-    for chunk in chunks:
-        count+=lucky_tickets_count(chunk)
-    pprint(count)
+    result = map(lucky_tickets_count, chunks)
+    pprint(sum(result))
 
 if __name__ == '__main__':
     num_threads = multiprocessing.cpu_count()
